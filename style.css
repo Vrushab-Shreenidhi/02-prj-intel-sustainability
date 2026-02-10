@@ -1,1 +1,256 @@
+/* Import Intel One Mono font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+/* Apply font to entire page */
+body {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Limit the main content width and center it on wide screens */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+/* Style the header section */
+header {
+  background-color: #0071C5;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 3px solid #3090e4;
+  
+}
+
+/* Resize the Intel logo */
+header img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Style the main heading */
+h1 {
+  font-size: 44px;
+  color: #f0f0f0;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+/* Style the intro paragraph */
+header p {
+  font-size: 18px;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Give the hero more space on wide screens */
+@media (min-width: 1000px) {
+  header {
+    padding: 70px 40px;
+  }
+
+  header img {
+    width: 110px;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-size: 60px;
+    margin: 24px 0;
+  }
+
+  header p {
+    font-size: 20px;
+    max-width: 720px;
+  }
+}
+
+/* Style the timeline section */
+section {
+  padding: 40px 20px;
+  display: flex; /* Arranges items in a row*/
+  flex-direction: column; /* Stack cards top to bottom */
+  align-items: center; /* Center cards horizontally */
+  gap: 10px; /* Add space for arrows between cards */
+}
+
+/* Put cards side-by-side on larger screens */
+@media (min-width: 900px) {
+  section {
+    flex-direction: row; /* Place cards in one line */
+    flex-wrap: nowrap; /* Keep cards on a single row */
+    justify-content: flex-start; /* Start from the left */
+    gap: 20px;
+    overflow-x: auto; /* Allow sideways scrolling */
+    padding-bottom: 10px; /* Make room for the scrollbar */
+    scroll-snap-type: x mandatory; /* Snap to each card */
+  }
+
+  .card {
+    margin: 0; /* Remove extra space so the row is even */
+    flex: 0 0 320px; /* Give each card a fixed width */
+    max-width: 320px;
+    scroll-snap-align: start; /* Snap each card to the left */
+  }
+
+  /* Hide the down arrows on wide screens */
+  .card:not(:last-child)::before,
+  .card:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* Style each timeline card */
+.card {
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex; /* Put image and text side by side */
+  align-items: center; /* Line up items in the middle */
+  gap: 20px; /* Add space between image and text */
+  transform: scale(var(--card-scale, 1)); /* Scale based on scroll position */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animations */
+  position: relative; /* Anchor the arrow to each card */
+}
+
+/* Draw a down arrow between each card */
+.card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  width: 2px;
+  height: 20px;
+  background-color: #0071c5;
+  transform: translateX(-50%);
+}
+
+/* Arrowhead for the connector */
+.card:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -42px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #0071c5;
+  transform: translateX(-50%);
+}
+
+/* Style the card image */
+.card-image {
+  width: 170px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  order: 1; /* Keep image on the left */
+  display: block; /* Avoid extra inline spacing */
+}
+
+/* Size and align the logo image in the last card */
+.logo-image {
+  width: 140px;
+  margin-left: 10px;
+}
+
+/* Nudge the second card image slightly to the left */
+.image-shift-left {
+  margin-left: -42px;
+}
+
+/* Put the first card image on the right side */
+.image-right .card-image {
+  order: 2;
+}
+
+/* Let the text fill the extra space */
+.card-text {
+  flex: 1;
+  order: 1; /* Keep text on the left */
+}
+
+/* Style the year heading */
+section h2 {
+  font-size: 24px;
+  color: transparent; /* Hide the text but keep the element visible */
+  margin: 0 0 10px 0;
+  position: relative; /* Anchor the leaf image */
+  transition: color 0.3s ease; /* Fade the text in/out smoothly */
+}
+
+/* Leaf image shown above the year text */
+section h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -18px;
+  width: 120px;
+  height: 65px;
+  background-image: url("img/leaf_img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1; /* Show the leaf by default */
+  transition: opacity 0.3s ease;
+}
+
+/* Reveal the year when the user hovers over the card */
+.card:hover h2 {
+  color: #0071c5;
+}
+
+/* Hide the leaf when the user hovers over the card */
+.card:hover h2::before {
+  opacity: 0;
+}
+
+/* Style the card title */
+section h3 {
+  font-size: 22px;
+  color: #333;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Style card text */
+section p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Stack the image above the text on small screens */
+@media (max-width: 700px) {
+  h1 {
+    font-size: 32px;
+    margin: 12px 0;
+  }
+
+  header p {
+    font-size: 16px;
+    margin: 8px auto 0 auto;
+  }
+
+  section p {
+    margin: 8px 0 0 0;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-image {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
 /* Add your CSS here */
