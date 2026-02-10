@@ -10,9 +10,14 @@
 
   <!-- Header / Hero Section -->
   <header>
-    <div>
+    <!-- Logo section -->
+    <div class="logo-section">
       <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
       <img src="img/intel-header-logo.svg" alt="Intel Logo" />
+    </div>
+    
+    <!-- Text section -->
+    <div class="text-section">
       <!-- Main Heading -->
       <h1>
         Sustainability Through the Ages
@@ -26,118 +31,194 @@
       </p>
     </div>
   </header>
+    
+  <!-- Page container to limit width and center content -->
+  <div class="page">
 
   <!-- Timeline Cards Section -->
   <section>
 
     <!-- Card 1: 1968 -->
-    <div>
-      <h2>1968</h2>
-      <h3>Intel Founded</h3>
-      <!-- Add image -->
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
+    <div class="card image-right">
+      <!-- Card image (left side) -->
+      <img class="card-image" src="img/1.jpg" alt="Intel founders in 1968" />
+      <!-- Card text (right side) -->
+      <div class="card-text">
+        <h2>1968</h2>
+        <h3>Intel Founded</h3>
+        <p>
+          Robert Noyce and Gordon Moore rename the newly formed company 
+          NM Electronics to Intel Corporation, laying the foundation for 
+          decades of technological innovation.
+        </p>
+      </div>
     </div>
 
     <!-- Card 2: 1971 -->
-    <div>
-      <h2>1971</h2>
-      <h3>First Microprocessor</h3>
-      <!-- Add image -->
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
+    <div class="card">
+      <!-- Card text (left side) -->
+      <div class="card-text">
+        <h2>1971</h2>
+        <h3>First Microprocessor</h3>
+        <p>
+          Intel debuts the 4004, the world's first commercial microprocessor, 
+          igniting the microprocessor revolution and propelling the future 
+          of computing devices.
+        </p>
+      </div>
+      <!-- Card image (right side) -->
+      <img class="card-image image-shift-left" src="img/2.jpg" alt="Intel 4004 microprocessor" />
     </div>
 
     <!-- Card 3: 1978 -->
-    <div>
-      <h2>1978</h2>
-      <h3>8086 Processor</h3>
-      <!-- Add image -->
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
+    <div class="card">
+      <!-- Card text (right side) -->
+      <div class="card-text">
+        <h2>1978</h2>
+        <h3>8086 Processor</h3>
+        <p>
+          Launch of the 8086 processor, establishing the x86 architecture 
+          that drives countless PCs and servers in the modern era.
+        </p>
+      </div>
+      <!-- Card image (right side) -->
+      <img class="card-image" src="img/3.jpg" alt="Intel 8086 processor" />
     </div>
 
     <!-- Card 4: 1985 -->
-    <div>
-      <h2>1985</h2>
-      <h3>386 Processor</h3>
-      <!-- Add image -->
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
+    <div class="card">
+      <!-- Card text (right side) -->
+      <div class="card-text">
+        <h2>1985</h2>
+        <h3>386 Processor</h3>
+        <p>
+          Intel introduces the 386 processor with 32-bit architecture, 
+          ushering in a new era of performance and multitasking for 
+          personal computers.
+        </p>
+      </div>
+      <!-- Card image (right side) -->
+      <img class="card-image" src="img/4.jpg" alt="Intel 386 processor" />
     </div>
 
     <!-- Card 5: 2006 -->
-    <div>
-      <h2>2006</h2>
-      <h3>Peak GHG Emissions</h3>
-      <!-- Add image -->
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
+    <div class="card">
+      <!-- Card text (right side) -->
+      <div class="card-text">
+        <h2>2006</h2>
+        <h3>Peak GHG Emissions</h3>
+        <p>
+          This year marks Intel's highest annual greenhouse gas emissions 
+          for operations. Over subsequent years, Intel invests heavily in 
+          chemical abatement, renewable energy, and energy-efficient 
+          manufacturing to reverse this trend.
+        </p>
+      </div>
     </div>
 
     <!-- Card 6: 2020 -->
-    <div>
-      <h2>2020</h2>
-      <h3>RISE Strategy</h3>
-      <!-- Add image -->
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
+    <div class="card">
+      <!-- Card text (right side) -->
+      <div class="card-text">
+        <h2>2020</h2>
+        <h3>RISE Strategy</h3>
+        <p>
+          Intel launches its RISE (Responsible, Inclusive, Sustainable, 
+          Enabling) strategy and 2030 goals, aiming to drive industry-wide 
+          progress on climate action, water stewardship, and waste reduction.
+        </p>
+      </div>
     </div>
 
     <!-- Card 7: 2022 -->
-    <div>
-      <h2>2022</h2>
-      <h3>Net-Zero By 2040</h3>
-      <!-- Add image -->
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
+    <div class="card">
+      <!-- Card text (right side) -->
+      <div class="card-text">
+        <h2>2022</h2>
+        <h3>Net-Zero By 2040</h3>
+        <p>
+          Intel announces its commitment to achieve net-zero greenhouse 
+          gas emissions (Scope 1 and 2) across its global operations 
+          by 2040, building on years of environmental initiatives.
+        </p>
+      </div>
     </div>
 
     <!-- Card 8: 2023 -->
-    <div>
-      <h2>2023</h2>
-      <h3>Renewable Electricity</h3>
-      <!-- Add image -->
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
+    <div class="card">
+      <!-- Card text (right side) -->
+      <div class="card-text">
+        <h2>2023</h2>
+        <h3>Renewable Electricity</h3>
+        <p>
+          The company achieves 99% renewable electricity usage worldwide, 
+          helping to drastically lower carbon emissions and driving progress 
+          toward Intel's long-term sustainability goals.
+        </p>
+      </div>
     </div>
 
     <!-- Card 9: 2024 -->
-    <div>
-      <h2>2024</h2>
-      <h3>Sustainability Summit</h3>
-      <!-- Add image -->
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
+    <div class="card">
+      <!-- Card text (right side) -->
+      <div class="card-text">
+        <h2>2024</h2>
+        <h3>Sustainability Summit</h3>
+        <p>
+          Intel hosts its first Sustainability Summit, uniting suppliers, 
+          government officials, and industry leaders to collaborate on 
+          next-generation sustainable semiconductor manufacturing.
+        </p>
+      </div>
+      <!-- Grassy Intel logo (right side) -->
+      <img class="card-image image-shift-left logo-image" src="img/Grassy_Intel_logo.png" alt="Grassy Intel logo" />
     </div>
   </section>
   <p>Scroll to view timeline | Hover over cards to learn more!</p>
+
+  </div>
+
+  <script>
+    // Scale cards based on how close they are to the center of the screen
+    const section = document.querySelector("section");
+    const cards = document.querySelectorAll(".card");
+    const largeScreen = window.matchMedia("(min-width: 900px)");
+
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function updateCardScale() {
+      if (!largeScreen.matches) {
+        cards.forEach((card) => {
+          card.style.setProperty("--card-scale", 1);
+        });
+        return;
+      }
+
+      const sectionRect = section.getBoundingClientRect();
+      const centerX = sectionRect.left + sectionRect.width / 2;
+
+      cards.forEach((card) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + cardRect.width / 2;
+        const distance = Math.abs(centerX - cardCenter);
+        const maxDistance = sectionRect.width / 2 + cardRect.width;
+
+        // Scale between 0.92 (far) and 1.08 (center)
+        const rawScale = 1.08 - (distance / maxDistance) * 0.16;
+        const scale = clamp(rawScale, 0.92, 1.08);
+
+        card.style.setProperty("--card-scale", scale.toFixed(3));
+      });
+    }
+
+    // Update on load, scroll, and resize
+    window.addEventListener("load", updateCardScale);
+    window.addEventListener("resize", updateCardScale);
+    section.addEventListener("scroll", updateCardScale);
+    window.addEventListener("scroll", updateCardScale);
+  </script>
 </body>
 </html>
+
