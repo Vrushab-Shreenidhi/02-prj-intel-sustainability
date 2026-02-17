@@ -13,7 +13,7 @@
     <!-- Logo section -->
     <div class="logo-section">
       <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
+      <img src="img/intel-header-logo.svg" alt="Intel brand logo displayed in white lowercase letters on a bright blue background, with a small light-blue square above the “i” and a registered trademark symbol." />
     </div>
     
     <!-- Text section -->
@@ -33,15 +33,15 @@
   </header>
     
   <!-- Page container to limit width and center content -->
-  <div class="page">
+  <main class="page">
 
   <!-- Timeline Cards Section -->
-  <section>
+  <section class="timeline">
 
     <!-- Card 1: 1968 -->
     <div class="card image-right">
       <!-- Card image (left side) -->
-      <img class="card-image" src="img/1.jpg" alt="Intel founders in 1968" />
+      <img class="card-image" src="img/1.jpg" alt="Vintage-style illustration showing engineers working around early computer/semiconductor equipment, with a large Intel logo and the year 1968 on the right." />
       <!-- Card text (right side) -->
       <div class="card-text">
         <h2>1968</h2>
@@ -67,7 +67,7 @@
         </p>
       </div>
       <!-- Card image (right side) -->
-      <img class="card-image image-shift-left" src="img/2.jpg" alt="Intel 4004 microprocessor" />
+      <img class="card-image image-shift-left" src="img/2.jpg" alt="Macro photo of a square processor chip seated in a socket on a motherboard, surrounded by pins and electronic components." />
     </div>
 
     <!-- Card 3: 1978 -->
@@ -82,7 +82,7 @@
         </p>
       </div>
       <!-- Card image (right side) -->
-      <img class="card-image" src="img/3.jpg" alt="Intel 8086 processor" />
+      <img class="card-image" src="img/3.jpg" alt="Macro image of an Intel 8086 chip on a teal circuit board, surrounded by rows of metal pins." />
     </div>
 
     <!-- Card 4: 1985 -->
@@ -171,16 +171,101 @@
         </p>
       </div>
       <!-- Grassy Intel logo (right side) -->
-      <img class="card-image image-shift-left logo-image" src="img/Grassy_Intel_logo.png" alt="Grassy Intel logo" />
+      <img class="card-image image-shift-left logo-image" src="img/Grassy_Intel_logo.png" alt="Stylized “intel” wordmark and oval ring constructed from bright green moss, with twigs and leaves woven through it, on a white background." />
     </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+  <p class="timeline-note">Scroll to view timeline | Hover over cards to learn more!</p>
 
-  </div>
+  <!-- 3-Column Content Section -->
+  <section class="three-column">
+    <div class="three-column-wrap">
+      <!-- Column 1 -->
+      <div class="three-column-card">
+        <h2>RISE Strategy</h2>
+        <p>
+          Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy,
+          Intel sets ambitious 2030 goals, including driving industry-wide
+          progress on climate action, water stewardship, and waste reduction.
+        </p>
+        <!-- Learn More Button -->
+        <a class="button" href="#">Learn More</a>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="three-column-card">
+        <h2>Commitment</h2>
+        <p>
+          In 2022, Intel pledged to achieve net-zero greenhouse gas emissions
+          (Scope 1 and 2) by 2040. This commitment builds on decades of
+          environmental initiatives and partnerships across the semiconductor
+          industry.
+        </p>
+        <!-- Learn More Button -->
+        <a class="button" href="#">Learn More</a>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="three-column-card">
+        <h2>Water &amp; Waste</h2>
+        <p>
+          Intel conserves billions of gallons of water annually and
+          collaborates with local communities to restore watersheds.
+          Intel also upcycles and recycles materials to reduce waste and
+          advance a circular economy.
+        </p>
+        <!-- Learn More Button -->
+        <a class="button" href="#">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscription Form -->
+  <section class="newsletter">
+    <h2>Subscribe to our Newsletter</h2>
+    <!-- Simple form for beginners -->
+    <form class="newsletter-form" action="#" method="post">
+      <label for="email">Email Address</label>
+      <input id="email" name="email" type="email" placeholder="you@email.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  </main>
+
+  <!-- Footer with basic site links -->
+  <footer class="site-footer">
+    <p class="footer-text">&copy; 2026 Intel Sustainability. All rights reserved.</p>
+    <!-- Simple navigation links for beginners -->
+    <nav class="footer-nav">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Contact</a>
+    </nav>
+  </footer>
 
   <script>
+    // Detect language changes (like Google Translate) and apply RTL when needed
+    const rtlLanguages = ["ar", "he", "fa", "ur"];
+    const rootElement = document.documentElement;
+
+    function updateTextDirection() {
+      const pageLang = (rootElement.getAttribute("lang") || "").toLowerCase();
+      const isRtl = rtlLanguages.some((code) => pageLang.startsWith(code));
+      rootElement.setAttribute("dir", isRtl ? "rtl" : "ltr");
+    }
+
+    // Run once on load
+    updateTextDirection();
+
+    // Watch for language or direction changes
+    const languageObserver = new MutationObserver(updateTextDirection);
+    languageObserver.observe(rootElement, {
+      attributes: true,
+      attributeFilter: ["lang", "dir"],
+    });
+
     // Scale cards based on how close they are to the center of the screen
-    const section = document.querySelector("section");
+    const section = document.querySelector(".timeline");
     const cards = document.querySelectorAll(".card");
     const largeScreen = window.matchMedia("(min-width: 900px)");
 
@@ -221,4 +306,5 @@
   </script>
 </body>
 </html>
+
 
