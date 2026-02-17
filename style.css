@@ -40,7 +40,7 @@ h1 {
 /* Style the intro paragraph */
 header p {
   font-size: 18px;
-  color: #333;
+  color: #FFFFFF;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -68,7 +68,7 @@ header p {
 }
 
 /* Style the timeline section */
-section {
+.timeline {
   padding: 40px 20px;
   display: flex; /* Arranges items in a row*/
   flex-direction: column; /* Stack cards top to bottom */
@@ -78,7 +78,7 @@ section {
 
 /* Put cards side-by-side on larger screens */
 @media (min-width: 900px) {
-  section {
+  .timeline {
     flex-direction: row; /* Place cards in one line */
     flex-wrap: nowrap; /* Keep cards on a single row */
     justify-content: flex-start; /* Start from the left */
@@ -178,7 +178,7 @@ section {
 }
 
 /* Style the year heading */
-section h2 {
+.timeline h2 {
   font-size: 24px;
   color: transparent; /* Hide the text but keep the element visible */
   margin: 0 0 10px 0;
@@ -187,7 +187,7 @@ section h2 {
 }
 
 /* Leaf image shown above the year text */
-section h2::before {
+.timeline h2::before {
   content: "";
   position: absolute;
   left: 0;
@@ -212,7 +212,7 @@ section h2::before {
 }
 
 /* Style the card title */
-section h3 {
+.timeline h3 {
   font-size: 22px;
   color: #333;
   margin: 10px 0;
@@ -220,7 +220,7 @@ section h3 {
 }
 
 /* Style card text */
-section p {
+.timeline p {
   color: #555;
   line-height: 1.6;
   font-size: 16px;
@@ -238,7 +238,7 @@ section p {
     margin: 8px auto 0 auto;
   }
 
-  section p {
+  .timeline p {
     margin: 8px 0 0 0;
   }
 
@@ -253,4 +253,145 @@ section p {
   }
 }
 
-/* Add your CSS here */
+/* Timeline helper text */
+.timeline-note {
+  text-align: center;
+  color: #444;
+  margin: 10px 20px 40px 20px;
+}
+
+/* 3-column content section */
+.three-column {
+  padding: 30px 20px 50px 20px;
+}
+
+.three-column-wrap {
+  display: flex; /* Arrange columns in a row */
+  gap: 20px;
+  align-items: stretch;
+}
+
+.three-column-card {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  flex: 1;
+}
+
+.three-column-card h2 {
+  font-size: 22px;
+  color: #0071c5;
+  margin: 0 0 10px 0;
+}
+
+.three-column-card p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+/* Button style shared by links */
+.button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #0071c5;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #005fa6;
+}
+
+/* Newsletter section */
+.newsletter {
+  padding: 20px 20px 60px 20px;
+  text-align: center;
+}
+
+.newsletter h2 {
+  font-size: 26px;
+  color: #0071c5;
+  margin: 0 0 16px 0;
+}
+
+.newsletter-form {
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex; /* Stack items with a simple column */
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-form label {
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.newsletter-form input {
+  padding: 10px 12px;
+  border: 2px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.newsletter-form button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #0071c5;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background-color: #005fa6;
+}
+
+/* Stack columns on small screens */
+@media (max-width: 850px) {
+  .three-column-wrap {
+    flex-direction: column;
+  }
+}
+
+/* Footer section */
+.site-footer {
+  background-color: #f2f6fb;
+  border-top: 2px solid #d8e4f2;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.footer-text {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Simple footer navigation links */
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: #0071c5;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
